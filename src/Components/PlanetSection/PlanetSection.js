@@ -1,3 +1,4 @@
+import IllustrationContainer from "./ImageIllustration/Illustration";
 import InfoContainer from "./Info/Info";
 import IntroContainer from "./Intro/Intro";
 import { Intro } from "./Intro/IntroStyles";
@@ -9,6 +10,7 @@ const PlanetSection = ({ planetData }) => {
     <Section>
       <Container>
         <IntroContainer planetData= {planetData}/>
+        <IllustrationContainer planetData= {planetData}/>
         <TabsContainer planetData={planetData}/>
         <InfoContainer planetData={planetData}/>
       </Container>
