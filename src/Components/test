@@ -1,0 +1,6 @@
+    <Provider>
+      <Wrapper>
+        <NavLink to='/'>Test</NavLink>
+       <Navbar/>
+      </Wrapper>
+    </Provider>
