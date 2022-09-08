@@ -1,4 +1,4 @@
-import { Nav, List, Item } from "./NavDesktopstyles";
+import { Nav, List, Item, Link } from "./NavDesktopstyles";
 import {planets} from '../data'
 
 export const NavDesktop = () => {
@@ -7,9 +7,11 @@ export const NavDesktop = () => {
       <List>
         {planets.map(planet=>(
             <Item key={planet.id}>
-                <div>
+                <Link
+                $bgcolor={planet.color}
+                >
                     {planet.name}
-                </div>
+                </Link>
 
             </Item>
         ))}
