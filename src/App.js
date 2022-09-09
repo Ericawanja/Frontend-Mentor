@@ -10,11 +10,11 @@ function App() {
   //const [counter, setCounter] = useState('test')
   return (
     <Provider>
-    <Wrapper>      
-    <Navbar/>
-    <Earth/>
-    </Wrapper>
-  </Provider>
+      <Wrapper>
+        <Navbar />
+        <Earth />
+      </Wrapper>
+    </Provider>
   );
 }
 
