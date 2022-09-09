@@ -1,19 +1,20 @@
 /* eslint-disable no-unused-expressions */
 import { useEffect } from 'react';
-import useToggleMenu from '../useToggleMenu';
+import ToggleMenu from './ToggleMenu';
 import { Nav, Menu, Bars, List } from './NavMobileStyles';
-
+import {AnimatePresence } from 'framer-motion'
+import ItemsMobile from './ItemsController';
 
 
 function NavMobile({windowWidth}) {
 
-    const [
+   const [
         handleToggle,
         restoreToDefault,
         isOpen,
         isExpanded,
         tabletBreakpoint,
-    ] = useToggleMenu;
+    ] = ToggleMenu();
 
     useEffect(()=>{
         windowWidth >= tabletBreakpoint ? restoreToDefault(): '';
@@ -29,6 +30,21 @@ function NavMobile({windowWidth}) {
             >
                 <Bars isOpen={isOpen} />
             </Menu>
+            <AnimatePresence>
+                {isOpen && (
+                     <List
+                     id="nav-list"
+                     initial={{ opacity: 0 }}
+                     animate={{ opacity: 1 }}
+                     transition={{ ease: 'linear', duration: 0.3 }}
+                     exit={{ opacity: 0 }}
+                 >
+                     <ItemsMobile restoreToDefault={restoreToDefault} />
+                 </List>
+                    
+                )
+                }
+            </AnimatePresence>
     </Nav>
   )
 }
