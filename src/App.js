@@ -15,7 +15,7 @@ import Saturn from './pages/Saturn/Saturn';
 import Uranus from './pages/Uranus/Uranus';
 import Neptune from './pages/Neptune/Neptune';
 import HomePage from "./Components/HomePage/HomePage";
-//import KeyVisual from '../KeyVisual/KeyVisual';
+
 
 function App() {
   const location = useLocation();
@@ -44,11 +44,7 @@ function App() {
             <Route path='/' element={<HomePage activePlanet={activePlanet}/>}/>
 
           </Routes>
-         { /*<Routes>
-            <Route exact path ="/mecury">
-              <Mecury/>
-            </Route>
-          </Routes>*/}
+        
           
         </AnimatePresence>
       </Wrapper>

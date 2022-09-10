@@ -1,14 +1,55 @@
 import { Tab, Tabs } from "./TabsStyles";
 
-
-function TabsContainer({planetData}) {
+function TabsContainer({ planetData, handleClick, currentTab, windowWidth }) {
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      x: 50,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { delay: 1.5, duration: 1.5 },
+    },
+    exit: {
+      opacity: 0,
+      x: 50,
+      transition: { duration: 1 },
+    },
+  };
   return (
-    <Tabs>
-        <Tab planetData={planetData}isActive='true'>Overview</Tab>
-        <Tab planetData={planetData}isActive='' >Structure</Tab>
-        <Tab planetData={planetData}isActive=''>Surface</Tab>
+    <Tabs
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <Tab
+        planetData={planetData}
+        data-type="overview"
+        onClick={handleClick}
+        isActive={currentTab === "overview" ? true : false}
+      >
+        Overview
+      </Tab>
+      <Tab
+        data-type="structure"
+        planetData={planetData}
+        onClick={handleClick}
+        isActive={currentTab === "structure" ? true : false}
+      >
+        {windowWidth >= 768 ? "Internal" : ""} Structure
+      </Tab>
+      <Tab
+        data-type="geology"
+        planetData={planetData}
+        onClick={handleClick}
+        isActive={currentTab === "geology" ? true : false}
+      >
+       Surface {windowWidth >= 768 ? 'Geology' : ''}
+      </Tab>
     </Tabs>
-  )
+  );
 }
 
-export default TabsContainer; 
+export default TabsContainer;

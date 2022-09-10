@@ -14,7 +14,7 @@ export const NavDesktop = ({pathName, activePlanet, onHover}) => {
                   planet.path ===pathName ||
                   planet.path ===activePlanet
                 }
-                onMouseHover={()=>onHover(planet.path)}
+              
                 >
                     {planet.name}
                 </Link>
