@@ -1,4 +1,4 @@
-import PlanetSection from '../../components/PlanetSection/PlanetSection';
+import PlanetSection from '../../Components/PlanetSection/PlanetSection';
 import { data } from './data';
 
 const Jupiter = () => {

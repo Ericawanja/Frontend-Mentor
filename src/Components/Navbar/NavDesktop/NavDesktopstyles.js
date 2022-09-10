@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled, {css} from "styled-components";
+
 export const Nav = styled.nav`
   height: 100%;
 `;
@@ -17,7 +18,7 @@ export const List = styled.ul`
 `;
 export const Item = styled.li``;
 
-export const Link = styled.span`
+export const Link = styled(NavLink)`
   display: flex;
   position: relative;
   font-size: 0.6875rem;

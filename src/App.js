@@ -1,18 +1,42 @@
-import styled from "styled-components";
+
 import Wrapper from "./Components/Wrapper/Wrapper";
 import Provider from "./Components/Provider/Provider";
 import { Navbar } from "./Components/Navbar/Navbar";
-import { NavLink, BrowserRouter as Router } from "react-router-dom";
+import {  BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
-import Earth from "./pages/Earth/Earth";
+import { AnimatePresence } from "framer-motion";
+
+import Mecury from './pages/Mecury/Mecury';
+import Venus from './pages/Venus/Venus';
+import Earth from './pages/Earth/Earth';
+import Mars from './pages/Mars/Mars';
+import Jupiter from './pages/Jupiter/Jupiter';
+import Saturn from './pages/Saturn/Saturn';
+import Uranus from './pages/Uranus/Uranus';
+import Neptune from './pages/Neptune/Neptune';
+//import KeyVisual from '../KeyVisual/KeyVisual';
 
 function App() {
-  //const [counter, setCounter] = useState('test')
+  const location = useLocation();
+    const [activePlanet, setActivePlanet] = useState('/');
   return (
     <Provider>
       <Wrapper>
-        <Navbar />
-        <Earth />
+        <Navbar
+        pathName = {location.pathname}
+        onHover={setActivePlanet}
+        activePlanet={activePlanet}
+        
+        />
+        <AnimatePresence>
+          <Venus/>
+         { /*<Routes>
+            <Route exact path ="/mecury">
+              <Mecury/>
+            </Route>
+          </Routes>*/}
+          
+        </AnimatePresence>
       </Wrapper>
     </Provider>
   );

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import {motion } from 'framer-motion'
 
-export const Header = styled.header`
+export const Header = styled(motion.header)`
 padding:16px 24px;
 border-bottom:1px solid ${(props)=> props.theme.colors.grayDark};
 
@@ -34,7 +35,7 @@ align-items:center;
 export const Logo = styled.h1`
 all:unset;
 `
-export const LogoLink =styled.span`
+export const LogoLink =styled(Link)`
 font-size:28px;
 font-family: ${(props)=> props.theme.fonts.secondary};
 color:${(props)=> props.theme.colors.white};
