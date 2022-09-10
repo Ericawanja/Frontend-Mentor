@@ -14,6 +14,7 @@ import Jupiter from './pages/Jupiter/Jupiter';
 import Saturn from './pages/Saturn/Saturn';
 import Uranus from './pages/Uranus/Uranus';
 import Neptune from './pages/Neptune/Neptune';
+import HomePage from "./Components/HomePage/HomePage";
 //import KeyVisual from '../KeyVisual/KeyVisual';
 
 function App() {
@@ -29,7 +30,20 @@ function App() {
         
         />
         <AnimatePresence>
-          <Venus/>
+          
+          <Routes>
+           
+            <Route path='/mercury' element={<Mecury/>}/>
+            <Route path='/venus' element={<Venus/>}/>
+            <Route path='earth' element={<Earth/>}/>
+            <Route path='/mars' element={<Mars/>}/>
+            <Route path='/jupiter' element={<Jupiter/>}/>
+            <Route path='/saturn' element={<Saturn/>}/>
+            <Route path='/uranus' element={<Uranus/>}/>
+            <Route path='/neptune' element={<Neptune/>}/>
+            <Route path='/' element={<HomePage activePlanet={activePlanet}/>}/>
+
+          </Routes>
          { /*<Routes>
             <Route exact path ="/mecury">
               <Mecury/>
