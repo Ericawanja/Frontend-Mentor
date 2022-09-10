@@ -11,6 +11,9 @@ import useDataChange from "./useReplaceInfo";
 const PlanetSection = ({ planetData }) => {
   const [handleClick, currentTab, currentData, isChanging] =
     useDataChange(planetData);
+
+//console.log(currentData, 'h')
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const checkWindowWidth = () => {
@@ -36,9 +39,13 @@ const PlanetSection = ({ planetData }) => {
         />
         <IllustrationContainer
           planetData={planetData}
-          handleClick={handleClick}
-          currentTab={currentTab}
-          windowWidth={windowWidth}
+          currentData ={currentData}
+          isChanging={isChanging}
+        />
+        <IntroContainer
+          planetData={planetData}
+          currentData={currentData}
+          isChanging={isChanging}
         />
         <InfoContainer planetData={planetData} />
       </Container>
