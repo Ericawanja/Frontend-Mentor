@@ -1,32 +1,35 @@
-import styled, {css}from 'styled-components'
+import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Tabs = styled.div`
-display:flex;
-border-bottom: 1px solid ${(props)=> props.theme.grayDark};
-justify-content:space-between;
-padding:0 24px;
-@media (min-width: 480px) {
-    justify-content: space-evenly;
-}
+export const Tabs = styled(motion.div)`
+    display: flex;
+    border-bottom: 1px solid ${(props) => props.theme.colors.grayDark};
+    justify-content: space-between;
+    padding: 0 24px;
+    
 
-@media (min-width: 768px) {
-    grid-area: tabs;
-    flex-flow: column;
-    gap: 16px;
-    border-bottom: unset;
-    padding: 0;
-    width: 100%;
-    max-width: 281px;
-    align-self: center;
-    justify-self: end;
-}
+    @media (min-width: 480px) {
+        justify-content: space-evenly;
+    }
 
-@media (min-width: 1025px) {
-    max-width: unset;
-    align-self: start;
-}
+    @media (min-width: 768px) {
+        grid-area: tabs;
+        flex-flow: column;
+        gap: 16px;
+        border-bottom: unset;
+        padding: 0;
+        width: 100%;
+        max-width: 281px;
+        align-self: center;
+        justify-self: end;
+    }
 
-`
+    @media (min-width: 1025px) {
+        max-width: unset;
+        align-self: start;
+    }
+`;
+
 export const Tab = styled.button`
     position: relative;
     display: flex;
@@ -103,6 +106,7 @@ export const Tab = styled.button`
             outline: 2px dashed ${(props) => props.planetData.sectionColor};
             outline-offset: 2px;
         }
+
         ${(props) =>
             props.isActive
                 ? css`
@@ -111,7 +115,7 @@ export const Tab = styled.button`
                   `
                 : ''};
     }
-       
+
     @media (min-width: 1025px) {
         font-size: 0.75rem;
         letter-spacing: 0.16rem;
