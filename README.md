@@ -1,8 +1,8 @@
 # Planet Facts App
 
-A single page application built in reactJs that shows all the 7 planets and details on thier structure and geology among other facts.
+A single page application built in reactJs that shows all the 7 planets, details on their structure and geology among other facts.
 
-## Features
+## Features and Tools
 
 1. ReactJs
 
@@ -11,7 +11,7 @@ ReactJs is a front-end library for building user interfaces that uses component 
 
 2. React-router-dom
 
-With the increased popularity of single-page-application because of the reduced loading time and fewer server calls, **React-router** is a library that makes possible of building several pages in a single page application.
+With the increased popularity of single-page-application because of the reduced loading time and fewer server calls, **React-router** is a library that makes possible to build several pages  as single page application in reactJs.
 
 React router allows you to define different routes which are handled dynamically under one tree. Check more about react router [here](https://v5.reactrouter.com/web/guides/quick-start) 
 
