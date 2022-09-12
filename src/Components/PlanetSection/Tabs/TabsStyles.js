@@ -110,8 +110,7 @@ export const Tab = styled.button`
         ${(props) =>
             props.isActive
                 ? css`
-                      background-color: ${(props) =>
-                          props.planetData.sectionColor};
+                      background-color: ${(props) =>props.planetData.sectionColor};
                   `
                 : ''};
     }

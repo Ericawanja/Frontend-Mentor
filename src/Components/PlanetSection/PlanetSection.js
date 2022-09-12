@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import IllustrationContainer from "./ImageIllustration/Illustration";
 import InfoContainer from "./Info/Info";
 import IntroContainer from "./Intro/Intro";
-import { Intro } from "./Intro/IntroStyles";
+
 import { Section, Container } from "./PlanetSectionStyles";
 import TabsContainer from "./Tabs/Tabs";
 import useDataChange from "./useReplaceInfo";

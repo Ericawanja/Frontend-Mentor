@@ -17,6 +17,7 @@ function TabsContainer({ planetData, handleClick, currentTab, windowWidth }) {
       transition: { duration: 1 },
     },
   };
+
   return (
     <Tabs
       variants={containerVariants}
@@ -46,7 +47,7 @@ function TabsContainer({ planetData, handleClick, currentTab, windowWidth }) {
         onClick={handleClick}
         isActive={currentTab === "geology" ? true : false}
       >
-       Surface {windowWidth >= 768 ? 'Geology' : ''}
+        Surface {windowWidth >= 768 ? "Geology" : ""}
       </Tab>
     </Tabs>
   );

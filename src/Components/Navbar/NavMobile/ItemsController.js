@@ -1,7 +1,6 @@
 import { Item, Link } from "./NavMobileStyles";
 import { planets } from "../data";
 
-
 const ItemsMobile = ({ restoreToDefault }) => {
   return planets.map((planet) => (
     <Item
@@ -14,7 +13,11 @@ const ItemsMobile = ({ restoreToDefault }) => {
         delay: `${(planet.id * 5 + 0.5) / 100}`,
       }}
     >
-      <Link color={planet.color} onClick={() => restoreToDefault()}>
+      <Link
+        to={planet.name}
+        color={planet.color}
+        onClick={() => restoreToDefault()}
+      >
         {planet.name}
       </Link>
     </Item>

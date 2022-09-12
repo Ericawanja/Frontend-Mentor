@@ -22,7 +22,7 @@ export const Info = styled(motion.ul)`
 
     @media (min-width: 1025px) {
         gap: 30px;
-        margin-top:60px;
+       
     }
 `;
 

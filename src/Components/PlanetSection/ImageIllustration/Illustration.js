@@ -1,7 +1,36 @@
+import { useState, useEffect } from "react";
+
 import { Illustration, Image } from "./IllustrationStyles";
 
 function IllustrationContainer({ planetData, isChanging, currentData }) {
-  console.log(currentData);
+  
+
+  const [imageUrl, setImageUrl] = useState("");
+  
+  
+
+  useEffect(() => {
+    const checkImageUrl = (planetData, currentData) => {
+      if (currentData === "overview") {
+        setImageUrl(planetData.overview.image);
+      } else if (currentData === "structure") {
+        setImageUrl(planetData.structure.image);
+      } else {
+        setImageUrl(planetData.geology.image);
+      }
+    };
+    checkImageUrl(planetData, currentData);
+  }, [planetData, currentData]);
+
+ /* useEffect(() => {
+    const checkGeUrl = (planetData, currentData) => {
+      if (currentData === "geology") {
+        let url = planetData.overview.geo ? planetData.overview.geo : " ";
+        setGeoUrl(url);
+      }
+    };
+    checkGeUrl(planetData, currentData)
+  }, [planetData, currentData]);*/
 
   const containerVariants = {
     hidden: {
@@ -34,8 +63,8 @@ function IllustrationContainer({ planetData, isChanging, currentData }) {
       exit="exit"
     >
       <Image
-        image={planetData.overview.image}
-        geo={currentData.geo ? currentData.geo : false}
+        image={imageUrl}
+       geo={(currentData === 'geology') ? planetData.geology.geo : false}
         desktopImgWidth={planetData.desktopImgWidth}
         tabletImgWidth={planetData.tabletImgWidth}
         mobileImgWidth={planetData.mobileImgWidth}

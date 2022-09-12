@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-
+import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav``;
@@ -65,7 +65,7 @@ export const Bars = styled.span`
             : ''};
 `;
 
-export const List = styled.ul`
+export const List = styled(motion.ul)`
     position: absolute;
     display: flex;
     flex-flow: column;
@@ -76,11 +76,11 @@ export const List = styled.ul`
     z-index: 999;
 `;
 
-export const Item = styled.li`
+export const Item = styled(motion.li)`
     border-bottom: 1px solid ${(props) => props.theme.colors.grayDark};
 `;
 
-export const Link = styled.span`
+export const Link = styled(NavLink)`
     display: flex;
     justify-content: space-between;
     position: relative;
