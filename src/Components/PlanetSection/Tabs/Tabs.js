@@ -1,6 +1,7 @@
 import { Tab, Tabs } from "./TabsStyles";
 
-function TabsContainer({ planetData, handleClick, currentTab, windowWidth }) {
+function TabsContainer({ planetData, handleClick, currentData, windowWidth}) {
+  //console.log(currentData)
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -29,7 +30,7 @@ function TabsContainer({ planetData, handleClick, currentTab, windowWidth }) {
         planetData={planetData}
         data-type="overview"
         onClick={handleClick}
-        isActive={currentTab === "overview" ? true : false}
+        isActive={currentData === "overview" ? true : false}
       >
         Overview
       </Tab>
@@ -37,7 +38,7 @@ function TabsContainer({ planetData, handleClick, currentTab, windowWidth }) {
         data-type="structure"
         planetData={planetData}
         onClick={handleClick}
-        isActive={currentTab === "structure" ? true : false}
+        isActive={currentData === "structure" ? true : false}
       >
         {windowWidth >= 768 ? "Internal" : ""} Structure
       </Tab>
@@ -45,7 +46,7 @@ function TabsContainer({ planetData, handleClick, currentTab, windowWidth }) {
         data-type="geology"
         planetData={planetData}
         onClick={handleClick}
-        isActive={currentTab === "geology" ? true : false}
+        isActive={currentData === "geology" ? true : false}
       >
         Surface {windowWidth >= 768 ? "Geology" : ""}
       </Tab>

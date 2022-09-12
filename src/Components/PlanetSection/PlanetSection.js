@@ -34,7 +34,7 @@ const PlanetSection = ({ planetData }) => {
         <TabsContainer
           planetData={planetData}
           handleClick={handleClick}
-          currentTab={currentTab}
+          currentData={currentData}
           windowWidth={windowWidth}
         />
         <IllustrationContainer
