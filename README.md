@@ -2,6 +2,8 @@
 
 A single page application built in reactJs that shows all the 7 planets, details on their structure and geology among other facts.
 
+[Preview Live App](https://planetfactserica.netlify.app/)
+
 ## Features and Tools
 
 1. ReactJs
