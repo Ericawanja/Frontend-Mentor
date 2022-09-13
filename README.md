@@ -33,4 +33,4 @@ This is a production-ready library optimized for React. [Framer motion](https://
 
 5. Js Doc
 
-USed JsDoc to document the various type of function parameters. Good code documentation helps to understand what a particular code snippet does in future as well a give other team members and maintenance easy time.
+USed JsDoc to document the various type of function parameters. Good code documentation helps to understand what a particular code snippet does in future, and easy time to the maintenance team
